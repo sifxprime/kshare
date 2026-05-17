@@ -1,0 +1,43 @@
+node_modules/
+dist/
+.next/
+build/
+coverage/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+
+# Environment — NEVER commit these
+.env
+.env.local
+.env.production
+.env.staging
+packages/server/.env
+packages/dashboard/.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/settings.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# PM2
+ecosystem.config.js
+.pm2/
+
+# Certs — keep off repo
+ssl/
+certs/
+*.pem
+*.key
+*.crt
+
+# Lock files (keep pnpm-lock.yaml, ignore others)
+package-lock.json
+yarn.lock

@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 340" width="860" height="340">
+  <defs>
+    <style>
+      .mono { font-family: 'SF Mono','JetBrains Mono','Consolas',monospace; }
+    </style>
+    <marker id="arr" markerWidth="7" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <path d="M0,0 L0,7 L7,3.5 z" fill="#22c55e" opacity="0.6"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="860" height="340" fill="#0d0d0d" rx="14"/>
+  <rect x="1" y="1" width="858" height="338" fill="none" stroke="#1a1a1a" stroke-width="1" rx="14"/>
+
+  <!-- Section title -->
+  <text x="430" y="36" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="11" fill="#333" text-anchor="middle" letter-spacing="0.12em">INSTALLATION</text>
+
+  <!-- Step indicators & connectors -->
+  <!-- connector lines -->
+  <line x1="200" y1="90" x2="290" y2="90" stroke="#1a2e1a" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+  <line x1="570" y1="90" x2="660" y2="90" stroke="#1a2e1a" stroke-width="1.5" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+
+  <!-- ── Step 1: Install ── -->
+  <rect x="30" y="58" width="170" height="124" rx="10" fill="#111" stroke="#1f1f1f" stroke-width="1.5"/>
+  <rect x="30" y="58" width="170" height="3" rx="1.5" fill="#22c55e"/>
+  <!-- Step number -->
+  <circle cx="115" cy="72" r="0" fill="none"/>
+  <rect x="44" y="64" width="20" height="20" rx="4" fill="#0f1a0f"/>
+  <text x="54" y="78" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="11" fill="#22c55e" text-anchor="middle" font-weight="700">1</text>
+  <text x="78" y="78" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#888">Install</text>
+
+  <!-- Terminal window -->
+  <rect x="42" y="94" width="146" height="78" rx="6" fill="#0a0a0a" stroke="#1a1a1a" stroke-width="1"/>
+  <!-- Traffic lights -->
+  <circle cx="54" cy="105" r="3" fill="#f87171" opacity="0.7"/>
+  <circle cx="64" cy="105" r="3" fill="#fbbf24" opacity="0.7"/>
+  <circle cx="74" cy="105" r="3" fill="#a3e635" opacity="0.7"/>
+  <!-- Command lines -->
+  <text x="50" y="123" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#22c55e">$</text>
+  <text x="60" y="123" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#e2e8f0">npm install -g kshare</text>
+  <text x="50" y="137" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="8.5" fill="#22c55e">or</text>
+  <text x="50" y="151" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#22c55e">$</text>
+  <text x="60" y="151" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#e2e8f0">npx kshare 3000</text>
+  <text x="42" y="192" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="8.5" fill="#444">Works on macOS · Linux · Windows</text>
+
+  <!-- ── Step 2: Run ── -->
+  <rect x="300" y="58" width="270" height="124" rx="10" fill="#111" stroke="#1f1f1f" stroke-width="1.5"/>
+  <rect x="300" y="58" width="270" height="3" rx="1.5" fill="#22c55e"/>
+  <rect x="314" y="64" width="20" height="20" rx="4" fill="#0f1a0f"/>
+  <text x="324" y="78" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="11" fill="#22c55e" text-anchor="middle" font-weight="700">2</text>
+  <text x="348" y="78" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#888">Run</text>
+
+  <rect x="312" y="94" width="246" height="78" rx="6" fill="#0a0a0a" stroke="#1a1a1a" stroke-width="1"/>
+  <circle cx="324" cy="105" r="3" fill="#f87171" opacity="0.7"/>
+  <circle cx="334" cy="105" r="3" fill="#fbbf24" opacity="0.7"/>
+  <circle cx="344" cy="105" r="3" fill="#a3e635" opacity="0.7"/>
+
+  <text x="320" y="123" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#22c55e">$</text>
+  <text x="330" y="123" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#e2e8f0">kshare --port 3000</text>
+  <text x="320" y="141" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#555">  Connected</text>
+  <text x="320" y="155" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#444">  Public URL</text>
+  <text x="396" y="155" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#06b6d4">https://ab12x.kodelyth.net</text>
+  <text x="320" y="166" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#444">  Expires</text>
+  <text x="370" y="166" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#fbbf24">23h 59m</text>
+
+  <text x="312" y="192" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="8.5" fill="#444">Optional: --password mykey  --qr</text>
+
+  <!-- ── Step 3: Share ── -->
+  <rect x="670" y="58" width="160" height="124" rx="10" fill="#111" stroke="#1f1f1f" stroke-width="1.5"/>
+  <rect x="670" y="58" width="160" height="3" rx="1.5" fill="#22c55e"/>
+  <rect x="684" y="64" width="20" height="20" rx="4" fill="#0f1a0f"/>
+  <text x="694" y="78" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="11" fill="#22c55e" text-anchor="middle" font-weight="700">3</text>
+  <text x="718" y="78" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#888">Share</text>
+
+  <!-- Browser mockup -->
+  <rect x="682" y="94" width="136" height="78" rx="6" fill="#0a0a0a" stroke="#1a1a1a" stroke-width="1"/>
+  <!-- Browser chrome -->
+  <rect x="682" y="94" width="136" height="22" rx="6" fill="#141414"/>
+  <rect x="682" y="108" width="136" height="8" fill="#141414"/>
+  <circle cx="692" cy="105" r="3" fill="#f87171" opacity="0.7"/>
+  <circle cx="702" cy="105" r="3" fill="#fbbf24" opacity="0.7"/>
+  <circle cx="712" cy="105" r="3" fill="#a3e635" opacity="0.7"/>
+  <!-- Address bar -->
+  <rect x="720" y="99" width="90" height="12" rx="3" fill="#1a1a1a"/>
+  <text x="765" y="108" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="6.5" fill="#06b6d4" text-anchor="middle">ab12x.kodelyth.net</text>
+  <!-- Page content lines -->
+  <rect x="690" y="122" width="80" height="6" rx="2" fill="#1f2f1f" opacity="0.8"/>
+  <rect x="690" y="132" width="110" height="4" rx="1.5" fill="#1a1a1a"/>
+  <rect x="690" y="140" width="100" height="4" rx="1.5" fill="#1a1a1a"/>
+  <rect x="690" y="148" width="60" height="4" rx="1.5" fill="#1a1a1a"/>
+  <rect x="690" y="156" width="30" height="8" rx="3" fill="#0f1a0f" stroke="#22c55e" stroke-width="0.8"/>
+  <text x="705" y="163" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="5" fill="#22c55e" text-anchor="middle">Go</text>
+
+  <text x="682" y="192" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="8.5" fill="#444">Any browser, anywhere</text>
+
+  <!-- ── Advanced options row ── -->
+  <text x="430" y="232" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#2a2a2a" text-anchor="middle" letter-spacing="0.08em">ADVANCED OPTIONS</text>
+
+  <!-- QR card -->
+  <rect x="30" y="246" width="188" height="76" rx="8" fill="#111" stroke="#1f1f1f" stroke-width="1"/>
+  <rect x="42" y="260" width="52" height="52" rx="4" fill="#0a0a0a" stroke="#1f1f1f" stroke-width="1"/>
+  <!-- Mini QR placeholder -->
+  <rect x="46" y="264" width="8" height="8" rx="1" fill="#333"/>
+  <rect x="56" y="264" width="4" height="4" rx="0.5" fill="#333"/>
+  <rect x="62" y="264" width="8" height="8" rx="1" fill="#333"/>
+  <rect x="46" y="276" width="4" height="4" rx="0.5" fill="#333"/>
+  <rect x="60" y="276" width="4" height="4" rx="0.5" fill="#333"/>
+  <rect x="46" y="282" width="8" height="8" rx="1" fill="#333"/>
+  <rect x="56" y="284" width="4" height="4" rx="0.5" fill="#333"/>
+  <rect x="62" y="282" width="8" height="8" rx="1" fill="#333"/>
+  <text x="102" y="272" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#e2e8f0" font-weight="600">QR Code</text>
+  <text x="102" y="286" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="8.5" fill="#555">kshare 3000 --qr</text>
+  <text x="102" y="300" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="8" fill="#333">Scan to open on phone</text>
+
+  <!-- Password card -->
+  <rect x="230" y="246" width="188" height="76" rx="8" fill="#111" stroke="#1f1f1f" stroke-width="1"/>
+  <!-- Lock icon -->
+  <rect x="244" y="268" width="26" height="22" rx="3" fill="#0a0a0a" stroke="#1f1f1f" stroke-width="1"/>
+  <path d="M250 268 Q250 260 257 260 Q264 260 264 268" stroke="#555" stroke-width="1.5" fill="none"/>
+  <circle cx="257" cy="278" r="3" fill="#555"/>
+  <line x1="257" y1="280" x2="257" y2="285" stroke="#555" stroke-width="1.5"/>
+  <text x="280" y="272" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#e2e8f0" font-weight="600">Password</text>
+  <text x="280" y="286" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="8.5" fill="#555">--password secret</text>
+  <text x="280" y="300" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="8" fill="#333">Gate who can access</text>
+
+  <!-- Dashboard card -->
+  <rect x="430" y="246" width="188" height="76" rx="8" fill="#111" stroke="#1f1f1f" stroke-width="1"/>
+  <!-- Mini chart -->
+  <polyline points="444,300 456,292 468,295 480,288 492,291 504,284" stroke="#22c55e" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="516" y="272" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#e2e8f0" font-weight="600">Dashboard</text>
+  <text x="516" y="286" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="8.5" fill="#555">localhost:4040</text>
+  <text x="516" y="300" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="8" fill="#333">Live request monitor</text>
+
+  <!-- Status card -->
+  <rect x="630" y="246" width="200" height="76" rx="8" fill="#111" stroke="#1f1f1f" stroke-width="1"/>
+  <text x="646" y="268" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#e2e8f0" font-weight="600">kshare status</text>
+  <text x="646" y="282" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="8.5" fill="#22c55e">  ab12x.kodelyth.net</text>
+  <text x="646" y="294" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="8" fill="#555">  (port 3000)</text>
+  <text x="646" y="308" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="8" fill="#333">Check active tunnels</text>
+
+  <!-- Bottom label -->
+  <text x="430" y="334" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#1f1f1f" text-anchor="middle" letter-spacing="0.1em">Node.js 18+ required · npm · pnpm · yarn · bun</text>
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" width="1280" height="640">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d0d0d;stop-opacity:1"/>
+      <stop offset="60%" style="stop-color:#0a120a;stop-opacity:1"/>
+      <stop offset="100%" style="stop-color:#0d0d0d;stop-opacity:1"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="50%" cy="45%" r="40%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:0.06"/>
+      <stop offset="100%" style="stop-color:#22c55e;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="28"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="url(#bgGrad)"/>
+
+  <!-- Subtle green glow blob -->
+  <ellipse cx="640" cy="280" rx="520" ry="300" fill="#22c55e" opacity="0.035" filter="url(#blur)"/>
+
+  <!-- Grid lines (very subtle) -->
+  <g stroke="#ffffff" stroke-opacity="0.02" stroke-width="1">
+    <line x1="0" y1="160" x2="1280" y2="160"/>
+    <line x1="0" y1="320" x2="1280" y2="320"/>
+    <line x1="0" y1="480" x2="1280" y2="480"/>
+    <line x1="320" y1="0" x2="320" y2="640"/>
+    <line x1="640" y1="0" x2="640" y2="640"/>
+    <line x1="960" y1="0" x2="960" y2="640"/>
+  </g>
+
+  <!-- Border -->
+  <rect x="2" y="2" width="1276" height="636" fill="none" stroke="#1a2e1a" stroke-width="2" rx="0"/>
+
+  <!-- KodeLythMark logo — large, centered high -->
+  <svg x="578" y="82" width="124" height="124" viewBox="0 0 400 400">
+    <polyline points="128,104 184,200 128,296" stroke="#ffffff" stroke-width="10" stroke-opacity="0.12" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <polyline points="172,100 260,200 172,300" stroke="#ffffff" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </svg>
+
+  <!-- KShare brand name -->
+  <text x="640" y="246" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="72" fill="#ffffff" text-anchor="middle" font-weight="700" letter-spacing="-1">KShare</text>
+
+  <!-- by KODELYTH -->
+  <text x="640" y="278" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="14" fill="#333" text-anchor="middle" letter-spacing="0.32em">by KODELYTH</text>
+
+  <!-- Tagline -->
+  <text x="640" y="332" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="24" fill="#94a3b8" text-anchor="middle" letter-spacing="0.02em">Share localhost. Instantly. No config.</text>
+
+  <!-- Green accent line -->
+  <line x1="480" y1="358" x2="800" y2="358" stroke="#22c55e" stroke-width="1" opacity="0.3"/>
+
+  <!-- Command pill -->
+  <rect x="376" y="380" width="528" height="62" rx="10" fill="#0f1a0f" stroke="#22c55e" stroke-width="1.5" stroke-opacity="0.5"/>
+  <text x="418" y="418" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="26" fill="#555">$</text>
+  <text x="448" y="418" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="26" fill="#e2e8f0">npx kshare</text>
+  <text x="672" y="418" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="26" fill="#22c55e">--port 3000</text>
+  <!-- Blinking cursor suggestion -->
+  <rect x="873" y="400" width="3" height="22" rx="1" fill="#22c55e" opacity="0.7"/>
+
+  <!-- Feature pills row -->
+  <rect x="202" y="474" width="132" height="28" rx="6" fill="#111" stroke="#1f1f1f" stroke-width="1"/>
+  <text x="268" y="492" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="11" fill="#555" text-anchor="middle">WebSocket tunnel</text>
+
+  <rect x="346" y="474" width="126" height="28" rx="6" fill="#111" stroke="#1f1f1f" stroke-width="1"/>
+  <text x="409" y="492" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="11" fill="#555" text-anchor="middle">No port forward</text>
+
+  <rect x="484" y="474" width="120" height="28" rx="6" fill="#111" stroke="#1f1f1f" stroke-width="1"/>
+  <text x="544" y="492" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="11" fill="#555" text-anchor="middle">24h auto-expiry</text>
+
+  <rect x="616" y="474" width="112" height="28" rx="6" fill="#111" stroke="#1f1f1f" stroke-width="1"/>
+  <text x="672" y="492" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="11" fill="#555" text-anchor="middle">Password lock</text>
+
+  <rect x="740" y="474" width="100" height="28" rx="6" fill="#111" stroke="#1f1f1f" stroke-width="1"/>
+  <text x="790" y="492" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="11" fill="#555" text-anchor="middle">Self-hostable</text>
+
+  <rect x="852" y="474" width="130" height="28" rx="6" fill="#111" stroke="#1f1f1f" stroke-width="1"/>
+  <text x="917" y="492" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="11" fill="#555" text-anchor="middle">macOS · Linux · Win</text>
+
+  <!-- Bottom domain -->
+  <text x="640" y="582" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="14" fill="#22c55e" text-anchor="middle" opacity="0.6">kodelyth.net</text>
+  <text x="640" y="604" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="11" fill="#222" text-anchor="middle" letter-spacing="0.08em">github.com/sifxprime/kshare</text>
+</svg>

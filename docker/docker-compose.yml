@@ -1,0 +1,41 @@
+services:
+  server:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.server
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+      # Admin port binds localhost only — not exposed publicly
+      - "127.0.0.1:4001:4001"
+    env_file:
+      - ../packages/server/.env
+    depends_on:
+      redis:
+        condition: service_healthy
+    networks:
+      - kshare
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    # No port exposed publicly — internal only
+    expose:
+      - "6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - kshare
+
+volumes:
+  redis_data:
+
+networks:
+  kshare:
+    driver: bridge

@@ -1,0 +1,21 @@
+{
+  "name": "kshare-workspace",
+  "private": true,
+  "version": "1.0.0",
+  "description": "KShare by KODELYTH — monorepo root",
+  "workspaces": [
+    "packages/cli",
+    "packages/server",
+    "packages/dashboard"
+  ],
+  "scripts": {
+    "dev:server": "pnpm --filter @kshare/server dev",
+    "dev:cli": "pnpm --filter kshare dev",
+    "dev:dashboard": "pnpm --filter @kshare/dashboard dev",
+    "build": "pnpm --filter './packages/**' build",
+    "test": "pnpm --filter './packages/**' test"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

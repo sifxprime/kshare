@@ -1,0 +1,324 @@
+.root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+/* ── Nav ──────────────────────────────────────────── */
+.nav {
+  padding: 1.5rem 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.navBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+.navWordmark {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #fff;
+}
+
+.navSep {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+.navProduct {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+}
+
+/* ── Main ─────────────────────────────────────────── */
+.main {
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2.5rem 2rem 4rem;
+}
+
+/* ── Title row ────────────────────────────────────── */
+.titleRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.subdomainBlock {}
+
+.subdomainLabel {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  display: block;
+  margin-bottom: 0.4rem;
+}
+
+.subdomain {
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: var(--text);
+  line-height: 1.1;
+}
+
+.subdomainSuffix {
+  color: var(--text-dim);
+  font-weight: 400;
+}
+
+.statusActive,
+.statusInactive {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 999px;
+  margin-top: 0.5rem;
+  white-space: nowrap;
+}
+
+.statusActive {
+  background: rgba(163, 230, 53, 0.1);
+  border: 1px solid rgba(163, 230, 53, 0.25);
+  color: var(--accent-2);
+}
+
+.statusInactive {
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  color: var(--text-dim);
+}
+
+.pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-2);
+  display: block;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.4; transform: scale(0.85); }
+}
+
+/* ── URL card ─────────────────────────────────────── */
+.urlCard {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-lg);
+  padding: 1.1rem 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.urlText {
+  flex: 1;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  color: #60a5fa;
+  word-break: break-all;
+  transition: color 150ms;
+}
+
+.urlText:hover {
+  color: #93c5fd;
+}
+
+.copyBtn {
+  background: var(--surface-2);
+  border: 1px solid var(--border-hi);
+  color: var(--text-muted);
+  font-family: inherit;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 0.45rem 1rem;
+  border-radius: var(--radius);
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 150ms, color 150ms, border-color 150ms;
+}
+
+.copyBtn:hover {
+  background: #222;
+  color: var(--text);
+  border-color: #333;
+}
+
+/* ── Expiry bar ───────────────────────────────────── */
+.expiryWrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.expiryBar {
+  flex: 1;
+  height: 3px;
+  background: var(--surface-2);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.expiryFill {
+  height: 100%;
+  background: var(--accent-2);
+  border-radius: 999px;
+  transition: width 1s linear;
+}
+
+.expiryLabel {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+/* ── Stats grid ───────────────────────────────────── */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.statCard {
+  background: var(--surface);
+  padding: 1.5rem 1.4rem;
+}
+
+.statVal {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.35rem;
+  word-break: break-word;
+}
+
+.statLabel {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+/* ── States ───────────────────────────────────────── */
+.hint {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-top: 1rem;
+}
+
+.offlineNote {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  line-height: 1.6;
+}
+
+.errorCard {
+  background: var(--surface);
+  border: 1px solid var(--border-hi);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  margin-top: 2rem;
+}
+
+.errorTitle {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+
+.errorCopy {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.errorBack {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  transition: color 150ms;
+}
+
+.errorBack:hover {
+  color: var(--text-muted);
+}
+
+/* ── Footer ───────────────────────────────────────── */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 800px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 1.5rem 2rem 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.footerBrand {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: var(--text-dim);
+}
+
+.footerBack {
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  transition: color 150ms;
+}
+
+.footerBack:hover {
+  color: var(--text-muted);
+}
+
+/* ── Responsive ───────────────────────────────────── */
+@media (max-width: 600px) {
+  .nav  { padding: 1.25rem; }
+  .main { padding: 2rem 1.25rem 3rem; }
+  .footer { padding: 1.25rem; }
+  .statsGrid { grid-template-columns: 1fr; }
+  .urlCard { flex-direction: column; align-items: stretch; }
+  .copyBtn { text-align: center; }
+}

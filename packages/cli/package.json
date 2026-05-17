@@ -1,0 +1,42 @@
+{
+  "name": "kshare",
+  "version": "1.0.0",
+  "description": "Turn any localhost port into a public HTTPS link — KShare by KODELYTH",
+  "author": "KODELYTH <hello@kodelyth.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/sifxprime/kshare",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sifxprime/kshare.git",
+    "directory": "packages/cli"
+  },
+  "bugs": {
+    "url": "https://github.com/sifxprime/kshare/issues"
+  },
+  "keywords": [
+    "localhost",
+    "tunnel",
+    "share",
+    "ngrok",
+    "port-forward",
+    "developer-tools",
+    "kodelyth"
+  ],
+  "bin": {
+    "kshare": "bin/kshare.js"
+  },
+  "main": "src/tunnel.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "node bin/kshare.js",
+    "test": "node --test src/*.test.js"
+  },
+  "dependencies": {
+    "ws": "^8.18.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.1",
+    "qrcode-terminal": "^0.12.0"
+  }
+}
