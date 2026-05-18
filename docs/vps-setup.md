@@ -232,7 +232,7 @@ pm2 logs kshare-server --lines 20
 Then test from your local machine:
 
 ```bash
-npm install -g kshare
+npm install -g @sifxprime/kshare
 kshare --port 3000
 ```
 

@@ -2,7 +2,7 @@ import styles from './page.module.css';
 import { KodeLythMark } from './components/KodeLythMark';
 
 const terminalLines = [
-  { t: 'cmd',   v: '$ npx kshare --port 3000' },
+  { t: 'cmd',   v: '$ npx @sifxprime/kshare --port 3000' },
   { t: 'blank', v: '' },
   { t: 'brand', v: '  KShare  by KODELYTH' },
   { t: 'blank', v: '' },
@@ -64,9 +64,9 @@ export default function HomePage() {
         </p>
 
         <div className={styles.installRow}>
-          <code className={styles.installCmd}>npx kshare --port 3000</code>
+          <code className={styles.installCmd}>npx @sifxprime/kshare --port 3000</code>
           <span className={styles.installOr}>or</span>
-          <code className={styles.installCmd}>npm install -g kshare</code>
+          <code className={styles.installCmd}>npm install -g @sifxprime/kshare</code>
         </div>
       </section>
 
