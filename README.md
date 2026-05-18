@@ -12,7 +12,7 @@ No config, no cloud account, no port forwarding. Just run it.
 ![Build](https://img.shields.io/badge/build-passing-brightgreen.svg)
 ![License](https://img.shields.io/badge/license-MIT-blue.svg)
 ![Node](https://img.shields.io/badge/node-%3E%3D18-brightgreen.svg)
-![npm](https://img.shields.io/badge/npm-kshare-red.svg)
+![npm](https://img.shields.io/badge/npm-%40sifxprime%2Fkshare-red.svg)
 ![Self-hostable](https://img.shields.io/badge/self--hostable-yes-blueviolet.svg)
 
 ---
@@ -28,7 +28,7 @@ localhost:3000
 Run one command:
 
 ```bash
-npx kshare --port 3000
+npx @sifxprime/kshare --port 3000
 ```
 
 Thirty seconds later, anyone on earth can open your app:
@@ -58,13 +58,15 @@ The link is HTTPS, it auto-reconnects if your Wi-Fi drops, it rewrites URLs in y
 
 ```bash
 # Install globally (recommended)
-npm install -g kshare
+npm install -g @sifxprime/kshare
 
-# Or run without installing
-npx kshare --port 3000
+# Or run without installing — no install needed
+npx @sifxprime/kshare --port 3000
 ```
 
 Works on macOS, Linux, and Windows. Node 18+ required.
+
+> The binary is always called `kshare`. After a global install, run `kshare --port 3000`.
 
 ---
 
