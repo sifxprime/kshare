@@ -18,6 +18,7 @@ function expiredPage(subdomain) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Link expired — KShare</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23080808'/%3E%3Cpolyline points='7,7 17,16 7,25' stroke='%23ffffff' stroke-width='2.5' stroke-opacity='.18' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Cpolyline points='13,6 26,16 13,26' stroke='%23a3e635' stroke-width='4.5' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3C/svg%3E">
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
     body{font-family:'Space Grotesk',-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;

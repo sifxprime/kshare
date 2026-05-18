@@ -1,50 +1,56 @@
-# DNS Setup
+# DNS and SSL Setup
 
-KShare uses wildcard subdomains — every tunnel gets its own URL like `ab12x.yourdomain.com`. This requires two DNS records and a wildcard SSL certificate.
+KShare assigns every tunnel a unique subdomain: `ab12x.yourdomain.com`, `xyz99.yourdomain.com`, and so on. For this to work, two things must be true:
+
+1. Every subdomain must resolve to your VPS IP (wildcard DNS)
+2. Every subdomain must have a valid HTTPS certificate (wildcard SSL)
 
 ---
 
 ## DNS records
 
-Add these two A records at your domain registrar or DNS provider:
+Add these records at your domain registrar or DNS provider:
 
 | Type | Name | Value | TTL |
 |------|------|-------|-----|
 | A | `@` | Your VPS IP | 300 |
 | A | `*` | Your VPS IP | 300 |
 
-The `*` wildcard record makes every subdomain — `ab12x.yourdomain.com`, `xyz99.yourdomain.com`, etc. — resolve to your server.
+The `@` record covers the root domain (`yourdomain.com`).  
+The `*` wildcard covers every subdomain: `ab12x.yourdomain.com`, `api.yourdomain.com`, etc.
 
-**How to find your VPS IP:**
+**Find your VPS IP:**
 
 ```bash
-# Run on your VPS
+# Run on the VPS
 curl -4 ifconfig.me
 ```
 
-**Propagation:** DNS changes can take a few minutes to a few hours to propagate globally. You can check with:
+**Check propagation:**
 
 ```bash
 dig +short yourdomain.com
-dig +short ab12x.yourdomain.com
+dig +short anything.yourdomain.com
 # Both should return your VPS IP
 ```
+
+DNS changes typically propagate within a few minutes, but can take up to an hour depending on your provider and TTL.
 
 ---
 
 ## Wildcard SSL certificate
 
-Standard HTTPS certificates do not cover wildcard subdomains. You need a wildcard cert covering `*.yourdomain.com`.
+A standard certificate covers only a single domain. A wildcard certificate covers `*.yourdomain.com` — every subdomain with one cert.
 
-Certbot's standard HTTP challenge cannot verify wildcards — you must use the **DNS challenge**.
+Certbot's HTTP challenge cannot issue wildcard certs. You must use the **DNS-01 challenge**, which proves domain ownership by adding a temporary TXT record.
 
-### Step 1: Install Certbot
+### Step 1 — Install Certbot
 
 ```bash
 sudo apt install -y certbot
 ```
 
-### Step 2: Request the wildcard cert
+### Step 2 — Request the wildcard cert
 
 ```bash
 sudo certbot certonly \
@@ -54,13 +60,16 @@ sudo certbot certonly \
   -d "*.yourdomain.com"
 ```
 
-Certbot will pause and ask you to add a TXT record like:
+Certbot pauses and gives you a verification string like:
 
 ```
-_acme-challenge.yourdomain.com   →   "some-random-verification-string"
+Please deploy a DNS TXT record under the name:
+_acme-challenge.yourdomain.com
+with the following value:
+aBcDeFgHiJkLmNoPqRsTuVwXyZ
 ```
 
-### Step 3: Add the TXT record
+### Step 3 — Add the TXT record
 
 In your DNS provider, add:
 
@@ -68,22 +77,24 @@ In your DNS provider, add:
 |------|------|-------|
 | TXT | `_acme-challenge` | the string Certbot gave you |
 
-Wait 30–60 seconds, then press Enter in the Certbot prompt.
+Wait 30–60 seconds for the TXT record to propagate, then press Enter in the Certbot prompt.
 
-### Step 4: Verify
+If Certbot fails the challenge, wait another minute and try again. TXT propagation is usually fast but not instant.
+
+### Step 4 — Verify
 
 ```bash
 ls /etc/letsencrypt/live/yourdomain.com/
-# Should show: cert.pem  chain.pem  fullchain.pem  privkey.pem
+# cert.pem  chain.pem  fullchain.pem  privkey.pem
 ```
 
 ---
 
 ## Auto-renewal
 
-Wildcard certs renewed via DNS challenge require manual intervention unless you use a DNS provider plugin.
+Wildcard certs obtained via manual DNS challenge need manual renewal unless you use a DNS provider plugin. Certbot renews automatically when a cert is within 30 days of expiry.
 
-**Manual renewal reminder (cron):**
+**If you cannot use a plugin (manual renewal):**
 
 ```bash
 sudo crontab -e
@@ -95,23 +106,29 @@ Add:
 0 3 1 * * certbot renew --quiet
 ```
 
-This attempts renewal monthly. Certbot only renews when the cert is within 30 days of expiry.
+When renewal runs, Certbot asks you to update the TXT record again. Set a calendar reminder.
 
-**Automated DNS renewal (recommended for production):**
+**Recommended: use a DNS provider plugin for fully automatic renewal.**
 
-Most major DNS providers have Certbot plugins. Check [certbot.eff.org/docs/using.html#dns-plugins](https://certbot.eff.org/docs/using.html#dns-plugins) for your provider:
+| Provider | Plugin |
+|----------|--------|
+| Cloudflare | `certbot-dns-cloudflare` |
+| DigitalOcean | `certbot-dns-digitalocean` |
+| AWS Route 53 | `certbot-dns-route53` |
+| Google Cloud DNS | `certbot-dns-google` |
 
-- Cloudflare: `certbot-dns-cloudflare`
-- DigitalOcean: `certbot-dns-digitalocean`
-- Route53: `certbot-dns-route53`
-- Google Cloud DNS: `certbot-dns-google`
+See the full plugin list at [certbot.eff.org/docs/using.html#dns-plugins](https://certbot.eff.org/docs/using.html#dns-plugins).
 
 Example with Cloudflare:
 
 ```bash
 pip install certbot-dns-cloudflare
-# Create credentials file with your Cloudflare API token
-# Then:
+
+# Create ~/.secrets/cloudflare.ini with your API token:
+# dns_cloudflare_api_token = your-cloudflare-api-token
+
+chmod 600 ~/.secrets/cloudflare.ini
+
 sudo certbot certonly \
   --dns-cloudflare \
   --dns-cloudflare-credentials ~/.secrets/cloudflare.ini \
@@ -119,18 +136,18 @@ sudo certbot certonly \
   -d "*.yourdomain.com"
 ```
 
-Automated plugins renew without manual intervention — strongly recommended for production.
+Once configured, renewal runs fully automatically with no manual steps.
 
 ---
 
-## Cloudflare users
+## Cloudflare proxy (important)
 
-If your domain uses Cloudflare's proxy (orange cloud), **disable the proxy** for the wildcard record:
+If your domain is on Cloudflare, the tunnel subdomain records must be **DNS only** (grey cloud), not proxied (orange cloud).
 
-- Set the `*` record to DNS only (grey cloud)
-- Keep the `@` record as DNS only too
+- `@` → DNS only
+- `*` → DNS only
 
-Cloudflare's proxy does not support WebSockets on the free plan in all regions, and it may interfere with tunnel connections.
+Cloudflare's proxy layer intercepts WebSocket connections in ways that break the tunnel. Set both records to DNS-only mode before testing.
 
 ---
 

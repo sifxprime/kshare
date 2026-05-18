@@ -42,18 +42,13 @@ Works on **macOS**, **Linux**, and **Windows**. Node 18+ required.
 kshare --port 3000
 ```
 
-```
-  KShare  by KODELYTH
-
-  Connected
-
-  Public URL   https://ab12x.kodelyth.net
-  Dashboard    http://localhost:4040
-  Expires      23h 59m
-  Local        localhost:3000
-
-  Press Ctrl+C to stop
-```
+<p align="center">
+  <img
+    src="https://raw.githubusercontent.com/sifxprime/kshare/main/docs/images/install.svg"
+    alt="KShare terminal output"
+    width="860"
+  />
+</p>
 
 Anyone on the internet can now open your app at that HTTPS link.
 
@@ -90,6 +85,9 @@ kshare --port 3000 --password mysecret
 # Show QR code in terminal (great for mobile testing)
 kshare --port 3000 --qr
 
+# Point at your own self-hosted server
+kshare --port 3000 --server wss://api.yourdomain.com
+
 # View active tunnels on this machine
 kshare status
 
@@ -111,8 +109,9 @@ kshare stop
 
 While a tunnel is running, open **[http://localhost:4040](http://localhost:4040)** to see:
 
-- Live request log with method, path, status, and response time
-- Tunnel URL, expiry countdown, local port
+- Live request log with method, path, and timestamp
+- Public URL, local port, and request count
+- Expiry countdown with visual progress bar
 - No browser extension required
 
 ---
@@ -121,8 +120,8 @@ While a tunnel is running, open **[http://localhost:4040](http://localhost:4040)
 
 | Variable | Default | Description |
 |---|---|---|
-| `KSHARE_SERVER` | `wss://api.kodelyth.net` | WebSocket server URL |
-| `KSHARE_PASSWORD` | — | Default password (used when `--password` flag has no value) |
+| `KSHARE_SERVER` | `wss://api.kodelyth.net` | WebSocket server URL (overridden by `--server` flag) |
+| `KSHARE_PASSWORD` | — | Default password (overridden by `--password` flag) |
 
 ---
 
@@ -145,24 +144,30 @@ While a tunnel is running, open **[http://localhost:4040](http://localhost:4040)
 
 ## Self-host
 
-Run your own tunnel server on any VPS — full control, your own domain:
+KShare works two ways:
 
+**Managed** — connect to KODELYTH's server, zero setup:
+```bash
+kshare --port 3000
+# → https://ab12x.kodelyth.net
+```
+
+**Self-hosted** — deploy on your own VPS, your domain:
 ```bash
 git clone https://github.com/sifxprime/kshare.git
 cd kshare/packages/server
-cp .env.example .env
-# Set BASE_DOMAIN, REDIS_URL, ADMIN_SECRET
+cp .env.example .env   # set BASE_DOMAIN and REDIS_URL
 pnpm install && pnpm start
+
+# Then point the CLI at your server:
+kshare --port 3000 --server wss://api.yourdomain.com
+# → https://ab12x.yourdomain.com
 ```
 
-Then point the CLI at your server:
+Self-hosted instances must display KODELYTH branding — the logo and "KShare by KODELYTH" appear on the homepage and error pages by default and should not be removed.
 
-```bash
-export KSHARE_SERVER=wss://api.yourdomain.com
-kshare --port 3000
-```
-
-Full guide: [docs/vps-setup.md](https://github.com/sifxprime/kshare/blob/main/docs/vps-setup.md)
+Full setup guide: [docs/vps-setup.md](https://github.com/sifxprime/kshare/blob/main/docs/vps-setup.md)  
+DNS and SSL guide: [docs/dns-setup.md](https://github.com/sifxprime/kshare/blob/main/docs/dns-setup.md)
 
 ---
 

@@ -1,171 +1,126 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 480" width="860" height="480">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 540" width="880" height="540">
   <defs>
-    <style>
-      .bg       { fill: #0d0d0d; }
-      .panel    { fill: #111111; stroke: #1f1f1f; stroke-width: 1; }
-      .card     { fill: #141414; stroke: #222222; stroke-width: 1; }
-      .mono     { font-family: 'SF Mono','JetBrains Mono','Consolas',monospace; }
-      .label    { font-family: 'SF Mono','JetBrains Mono','Consolas',monospace; font-size: 11px; fill: #e2e8f0; }
-      .dim      { font-family: 'SF Mono','JetBrains Mono','Consolas',monospace; font-size: 10px; fill: #444; }
-      .green    { fill: #22c55e; }
-      .cyan     { fill: #06b6d4; }
-      .yellow   { fill: #fbbf24; }
-      .red      { fill: #f87171; }
-      .blue     { fill: #60a5fa; }
-    </style>
+    <linearGradient id="fadeOut" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#080808" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#080808" stop-opacity="1"/>
+    </linearGradient>
+    <clipPath id="clip">
+      <rect width="880" height="540" rx="10"/>
+    </clipPath>
   </defs>
 
-  <!-- Background -->
-  <rect width="860" height="480" fill="#0d0d0d" rx="14"/>
-  <rect x="1" y="1" width="858" height="478" fill="none" stroke="#1a1a1a" stroke-width="1" rx="14"/>
+  <!-- Outer container -->
+  <rect width="880" height="540" rx="10" fill="#080808"/>
+  <g clip-path="url(#clip)">
 
-  <!-- Title bar -->
-  <rect x="0" y="0" width="860" height="46" fill="#111" rx="14"/>
-  <rect x="0" y="30" width="860" height="16" fill="#111"/>
-  <rect x="0" y="46" width="860" height="1" fill="#1f1f1f"/>
-  <!-- Traffic lights -->
-  <circle cx="22" cy="23" r="5" fill="#f87171" opacity="0.8"/>
-  <circle cx="38" cy="23" r="5" fill="#fbbf24" opacity="0.8"/>
-  <circle cx="54" cy="23" r="5" fill="#a3e635" opacity="0.8"/>
-  <!-- Title -->
-  <text x="430" y="28" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="12" fill="#555" text-anchor="middle">KShare Dashboard — localhost:4040</text>
+  <!-- ═══ HEADER (0–52) ═══ -->
+  <rect width="880" height="52" fill="#0f0f0f"/>
+  <line x1="0" y1="52" x2="880" y2="52" stroke="#1c1c1c" stroke-width="1"/>
 
-  <!-- Left sidebar -->
-  <rect x="0" y="46" width="200" height="434" fill="#0f0f0f" rx="0"/>
-  <rect x="0" y="46" width="200" height="434" fill="none" stroke="#1a1a1a" stroke-width="0"/>
-  <rect x="199" y="46" width="1" height="434" fill="#1f1f1f"/>
-
-  <!-- Sidebar header -->
-  <!-- KodeLythMark mini logo -->
-  <svg x="18" y="62" width="20" height="20" viewBox="0 0 400 400">
-    <polyline points="128,104 184,200 128,296" stroke="#ffffff" stroke-width="10" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-    <polyline points="172,100 260,200 172,300" stroke="#ffffff" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- KodeLythMark logo -->
+  <svg x="20" y="15" width="22" height="22" viewBox="42 28 60 64">
+    <polyline points="49,38 68,60 49,82" stroke="#ffffff" stroke-width="3.5" stroke-opacity="0.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <polyline points="64,35 95,60 64,85" stroke="#ffffff" stroke-width="11" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
   </svg>
-  <text x="44" y="76" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="13" fill="#e2e8f0" font-weight="700">KShare</text>
-  <text x="44" y="88" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="8" fill="#333" letter-spacing="0.08em">by KODELYTH</text>
 
-  <!-- Sidebar nav items -->
-  <!-- Active: Overview -->
-  <rect x="12" y="108" width="176" height="32" rx="6" fill="#0f1a0f"/>
-  <rect x="12" y="108" width="3" height="32" rx="1.5" fill="#22c55e"/>
-  <circle cx="28" cy="124" r="4" fill="#22c55e" opacity="0.8"/>
-  <text x="40" y="128" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="11" fill="#22c55e">Overview</text>
+  <!-- Brand text -->
+  <text x="48" y="25" font-family="'Space Grotesk',system-ui,sans-serif" font-size="10.5" fill="#ffffff" font-weight="700" letter-spacing="1.3">KSHARE</text>
+  <text x="48" y="37" font-family="'Space Grotesk',system-ui,sans-serif" font-size="7" fill="#555555" font-weight="500" letter-spacing="1.5">by Kodelyth</text>
 
-  <!-- Requests -->
-  <rect x="12" y="148" width="176" height="32" rx="6" fill="none"/>
-  <circle cx="28" cy="164" r="4" fill="#333"/>
-  <text x="40" y="168" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="11" fill="#555">Requests</text>
+  <!-- localhost:3000 pill -->
+  <rect x="704" y="17" width="104" height="18" rx="9" fill="#141414" stroke="#252525" stroke-width="1"/>
+  <text x="756" y="29.5" font-family="'JetBrains Mono',monospace" font-size="8.5" fill="#a0a0a0" text-anchor="middle" letter-spacing="0.2">localhost:3000</text>
 
-  <!-- Settings -->
-  <rect x="12" y="188" width="176" height="32" rx="6" fill="none"/>
-  <circle cx="28" cy="204" r="4" fill="#333"/>
-  <text x="40" y="208" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="11" fill="#555">Settings</text>
+  <!-- Live status pill -->
+  <rect x="814" y="17" width="50" height="18" rx="9" fill="#141414" stroke="rgba(163,230,53,0.25)" stroke-width="1"/>
+  <circle cx="826" cy="26" r="3" fill="#a3e635"/>
+  <text x="850" y="29.5" font-family="'Space Grotesk',system-ui,sans-serif" font-size="7.5" fill="#a3e635" font-weight="500" text-anchor="middle" letter-spacing="0.8">Live</text>
 
-  <!-- Status pill in sidebar -->
-  <rect x="14" y="384" width="172" height="52" rx="8" fill="#0a1a0a" stroke="#1a2e1a" stroke-width="1"/>
-  <circle cx="30" cy="404" r="5" fill="#22c55e"/>
-  <circle cx="30" cy="404" r="8" fill="#22c55e" opacity="0.15"/>
-  <text x="44" y="407" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#22c55e" font-weight="600">CONNECTED</text>
-  <text x="20" y="426" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#444">Expires in 23h 41m</text>
+  <!-- ═══ URL HERO (52–116) ═══ -->
+  <rect x="0" y="52" width="880" height="64" fill="#0f0f0f"/>
+  <line x1="0" y1="116" x2="880" y2="116" stroke="#1c1c1c" stroke-width="1"/>
 
-  <!-- Main content area -->
-  <!-- Public URL card -->
-  <rect x="216" y="62" width="428" height="72" rx="8" fill="#141414" stroke="#1f1f1f" stroke-width="1"/>
-  <rect x="216" y="62" width="428" height="3" rx="1.5" fill="#22c55e"/>
-  <text x="232" y="86" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#444">PUBLIC URL</text>
-  <text x="232" y="108" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="14" fill="#06b6d4" font-weight="600">https://ab12x.kodelyth.net</text>
-  <!-- Copy icon suggestion -->
-  <rect x="594" y="99" width="36" height="18" rx="4" fill="#1a2a2a" stroke="#1f3f3f" stroke-width="1"/>
-  <text x="612" y="111" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="8" fill="#06b6d4" text-anchor="middle">copy</text>
+  <text x="20" y="74" font-family="'Space Grotesk',system-ui,sans-serif" font-size="7.5" fill="#555555" font-weight="600" letter-spacing="1.5">PUBLIC URL</text>
+  <text x="20" y="101" font-family="'JetBrains Mono',monospace" font-size="13.5" fill="#a3e635" font-weight="500" letter-spacing="0.2">https://ab12x.kodelyth.net</text>
 
-  <!-- Port card -->
-  <rect x="656" y="62" width="186" height="72" rx="8" fill="#141414" stroke="#1f1f1f" stroke-width="1"/>
-  <text x="672" y="86" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#444">LOCAL PORT</text>
-  <text x="672" y="108" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="22" fill="#e2e8f0" font-weight="700">3000</text>
-  <text x="672" y="124" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#333">localhost:3000</text>
+  <!-- Copy button -->
+  <rect x="748" y="87" width="52" height="22" rx="6" fill="#1a1a1a" stroke="#252525" stroke-width="1"/>
+  <text x="774" y="101.5" font-family="'Space Grotesk',system-ui,sans-serif" font-size="8" fill="#a0a0a0" font-weight="600" text-anchor="middle" letter-spacing="0.4">Copy</text>
 
-  <!-- Stats row -->
-  <rect x="216" y="150" width="194" height="74" rx="8" fill="#141414" stroke="#1f1f1f" stroke-width="1"/>
-  <text x="232" y="172" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#444">TOTAL REQUESTS</text>
-  <text x="232" y="200" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="28" fill="#e2e8f0" font-weight="700">247</text>
-  <text x="350" y="200" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#22c55e">+12 last min</text>
+  <!-- ═══ STATS ROW (116–162) ═══ -->
+  <line x1="0" y1="162" x2="880" y2="162" stroke="#1c1c1c" stroke-width="1"/>
+  <line x1="293" y1="116" x2="293" y2="162" stroke="#1c1c1c" stroke-width="1"/>
+  <line x1="586" y1="116" x2="586" y2="162" stroke="#1c1c1c" stroke-width="1"/>
 
-  <rect x="420" y="150" width="220" height="74" rx="8" fill="#141414" stroke="#1f1f1f" stroke-width="1"/>
-  <text x="436" y="172" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#444">AVG RESPONSE TIME</text>
-  <text x="436" y="200" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="28" fill="#e2e8f0" font-weight="700">24<tspan font-size="12" fill="#555">ms</tspan></text>
+  <text x="20" y="131" font-family="'Space Grotesk',system-ui,sans-serif" font-size="7.5" fill="#555555" font-weight="600" letter-spacing="1.2">LOCAL PORT</text>
+  <text x="20" y="155" font-family="'Space Grotesk',system-ui,sans-serif" font-size="15.5" fill="#f2f2f2" font-weight="700" letter-spacing="-0.2">:3000</text>
 
-  <rect x="652" y="150" width="190" height="74" rx="8" fill="#141414" stroke="#1f1f1f" stroke-width="1"/>
-  <text x="668" y="172" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#444">ERROR RATE</text>
-  <text x="668" y="200" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="28" fill="#a3e635" font-weight="700">0.4<tspan font-size="12" fill="#555">%</tspan></text>
+  <text x="313" y="131" font-family="'Space Grotesk',system-ui,sans-serif" font-size="7.5" fill="#555555" font-weight="600" letter-spacing="1.2">REQUESTS</text>
+  <text x="313" y="155" font-family="'Space Grotesk',system-ui,sans-serif" font-size="15.5" fill="#a3e635" font-weight="700">42</text>
 
-  <!-- Request log table -->
-  <rect x="216" y="240" width="626" height="226" rx="8" fill="#141414" stroke="#1f1f1f" stroke-width="1"/>
-  <text x="232" y="260" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#444" letter-spacing="0.08em">LIVE REQUEST LOG</text>
-  <!-- Live indicator -->
-  <circle cx="352" cy="256" r="3" fill="#22c55e"/>
-  <circle cx="352" cy="256" r="5" fill="#22c55e" opacity="0.2"/>
+  <text x="606" y="131" font-family="'Space Grotesk',system-ui,sans-serif" font-size="7.5" fill="#555555" font-weight="600" letter-spacing="1.2">EXPIRES IN</text>
+  <text x="606" y="155" font-family="'Space Grotesk',system-ui,sans-serif" font-size="15.5" fill="#f2f2f2" font-weight="700">23h 12m</text>
 
-  <!-- Table header -->
-  <rect x="216" y="268" width="626" height="1" fill="#1f1f1f"/>
-  <text x="232" y="282" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#333">METHOD</text>
-  <text x="306" y="282" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#333">PATH</text>
-  <text x="580" y="282" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#333">STATUS</text>
-  <text x="642" y="282" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#333">TIME</text>
-  <text x="710" y="282" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#333">MS</text>
-  <rect x="216" y="288" width="626" height="1" fill="#1a1a1a"/>
+  <!-- ═══ EXPIRY BAR (162–196) ═══ -->
+  <rect x="0" y="162" width="880" height="34" fill="#0f0f0f"/>
+  <line x1="0" y1="196" x2="880" y2="196" stroke="#1c1c1c" stroke-width="1"/>
 
-  <!-- Row 1 -->
-  <rect x="216" y="289" width="626" height="28" fill="#0f1f0f" opacity="0.3"/>
-  <rect x="228" y="296" width="44" height="14" rx="3" fill="#1a2e1a"/>
-  <text x="250" y="307" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#22c55e" text-anchor="middle" font-weight="600">GET</text>
-  <text x="306" y="307" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#94a3b8">/api/v1/users</text>
-  <text x="580" y="307" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#22c55e" font-weight="600">200</text>
-  <text x="642" y="307" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#444">14:32:08</text>
-  <text x="710" y="307" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#555">18ms</text>
+  <rect x="20" y="177" width="820" height="3" rx="2" fill="#1a1a1a"/>
+  <rect x="20" y="177" width="787" height="3" rx="2" fill="#a3e635"/>
+  <text x="857" y="181" font-family="'Space Grotesk',system-ui,sans-serif" font-size="8.5" fill="#a0a0a0" text-anchor="end">23h 12m</text>
 
-  <!-- Row 2 -->
-  <rect x="228" y="322" width="44" height="14" rx="3" fill="#1a1a2e"/>
-  <text x="250" y="333" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#60a5fa" text-anchor="middle" font-weight="600">POST</text>
-  <text x="306" y="333" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#94a3b8">/api/v1/messages</text>
-  <text x="580" y="333" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#22c55e" font-weight="600">201</text>
-  <text x="642" y="333" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#444">14:32:05</text>
-  <text x="710" y="333" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#555">34ms</text>
+  <!-- ═══ LOG HEADER (196–228) ═══ -->
+  <line x1="0" y1="228" x2="880" y2="228" stroke="#1c1c1c" stroke-width="1"/>
 
-  <!-- Row 3 -->
-  <rect x="216" y="345" width="626" height="28" fill="#0f1f0f" opacity="0.3"/>
-  <rect x="228" y="352" width="44" height="14" rx="3" fill="#1a1a2e"/>
-  <text x="250" y="363" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#60a5fa" text-anchor="middle" font-weight="600">POST</text>
-  <text x="306" y="363" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#94a3b8">/webhook/stripe</text>
-  <text x="580" y="363" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#22c55e" font-weight="600">200</text>
-  <text x="642" y="363" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#444">14:32:01</text>
-  <text x="710" y="363" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#555">22ms</text>
+  <text x="20" y="216" font-family="'Space Grotesk',system-ui,sans-serif" font-size="7.5" fill="#555555" font-weight="700" letter-spacing="1.5">REQUEST LOG</text>
+  <rect x="122" y="205" width="22" height="14" rx="3" fill="#1a1a1a" stroke="#252525" stroke-width="1"/>
+  <text x="133" y="215.5" font-family="'JetBrains Mono',monospace" font-size="7.5" fill="#555555" text-anchor="middle">6</text>
+  <text x="857" y="216" font-family="'Space Grotesk',system-ui,sans-serif" font-size="8" fill="#555555" text-anchor="end" letter-spacing="0.5">Clear</text>
 
-  <!-- Row 4 -->
-  <rect x="228" y="378" width="44" height="14" rx="3" fill="#1a1a1a"/>
-  <text x="250" y="389" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#e2e8f0" text-anchor="middle" font-weight="600">GET</text>
-  <text x="306" y="389" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#94a3b8">/api/health</text>
-  <text x="580" y="389" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#22c55e" font-weight="600">200</text>
-  <text x="642" y="389" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#444">14:31:58</text>
-  <text x="710" y="389" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#555">6ms</text>
+  <!-- ═══ LOG ROWS ═══ -->
 
-  <!-- Row 5 -->
-  <rect x="216" y="401" width="626" height="28" fill="#0f1f0f" opacity="0.3"/>
-  <rect x="228" y="408" width="52" height="14" rx="3" fill="#2e1a1a"/>
-  <text x="254" y="419" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#f87171" text-anchor="middle" font-weight="600">DELETE</text>
-  <text x="306" y="419" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#94a3b8">/api/v1/sessions/old</text>
-  <text x="580" y="419" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#22c55e" font-weight="600">204</text>
-  <text x="642" y="419" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#444">14:31:44</text>
-  <text x="710" y="419" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#555">11ms</text>
+  <!-- Row 1: GET / -->
+  <line x1="0" y1="264" x2="880" y2="264" stroke="#1c1c1c" stroke-width="1"/>
+  <text x="20" y="251" font-family="'JetBrains Mono',monospace" font-size="10.5" fill="#a3e635" font-weight="500">GET</text>
+  <text x="84" y="251" font-family="'JetBrains Mono',monospace" font-size="10.5" fill="#a0a0a0">/</text>
+  <text x="857" y="251" font-family="'JetBrains Mono',monospace" font-size="9" fill="#555555" text-anchor="end">14:23:01</text>
 
-  <!-- Row 6 -->
-  <rect x="228" y="435" width="44" height="14" rx="3" fill="#1a1a2e"/>
-  <text x="250" y="446" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#60a5fa" text-anchor="middle" font-weight="600">POST</text>
-  <text x="306" y="446" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#94a3b8">/api/v1/auth/refresh</text>
-  <text x="580" y="446" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="10" fill="#fbbf24" font-weight="600">401</text>
-  <text x="642" y="446" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#444">14:31:39</text>
-  <text x="710" y="446" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#555">8ms</text>
-  <rect x="216" y="461" width="626" height="1" fill="#1a1a1a"/>
+  <!-- Row 2: GET /api/me -->
+  <line x1="0" y1="300" x2="880" y2="300" stroke="#1c1c1c" stroke-width="1"/>
+  <text x="20" y="287" font-family="'JetBrains Mono',monospace" font-size="10.5" fill="#a3e635" font-weight="500">GET</text>
+  <text x="84" y="287" font-family="'JetBrains Mono',monospace" font-size="10.5" fill="#a0a0a0">/api/me</text>
+  <text x="857" y="287" font-family="'JetBrains Mono',monospace" font-size="9" fill="#555555" text-anchor="end">14:23:04</text>
 
-  <!-- Label under image -->
-  <text x="430" y="474" font-family="'SF Mono','JetBrains Mono','Consolas',monospace" font-size="9" fill="#2a2a2a" text-anchor="middle" letter-spacing="0.12em">LOCAL DASHBOARD — http://localhost:4040</text>
+  <!-- Row 3: POST /api/login -->
+  <line x1="0" y1="336" x2="880" y2="336" stroke="#1c1c1c" stroke-width="1"/>
+  <text x="20" y="323" font-family="'JetBrains Mono',monospace" font-size="10.5" fill="#60a5fa" font-weight="500">POST</text>
+  <text x="84" y="323" font-family="'JetBrains Mono',monospace" font-size="10.5" fill="#a0a0a0">/api/login</text>
+  <text x="857" y="323" font-family="'JetBrains Mono',monospace" font-size="9" fill="#555555" text-anchor="end">14:22:58</text>
+
+  <!-- Row 4: GET /static/app.js -->
+  <line x1="0" y1="372" x2="880" y2="372" stroke="#1c1c1c" stroke-width="1"/>
+  <text x="20" y="359" font-family="'JetBrains Mono',monospace" font-size="10.5" fill="#a3e635" font-weight="500">GET</text>
+  <text x="84" y="359" font-family="'JetBrains Mono',monospace" font-size="10.5" fill="#a0a0a0">/static/app.js</text>
+  <text x="857" y="359" font-family="'JetBrains Mono',monospace" font-size="9" fill="#555555" text-anchor="end">14:22:51</text>
+
+  <!-- Row 5: DELETE /api/session -->
+  <line x1="0" y1="408" x2="880" y2="408" stroke="#1c1c1c" stroke-width="1"/>
+  <text x="20" y="395" font-family="'JetBrains Mono',monospace" font-size="10.5" fill="#f87171" font-weight="500">DELETE</text>
+  <text x="84" y="395" font-family="'JetBrains Mono',monospace" font-size="10.5" fill="#a0a0a0">/api/session</text>
+  <text x="857" y="395" font-family="'JetBrains Mono',monospace" font-size="9" fill="#555555" text-anchor="end">14:22:45</text>
+
+  <!-- Row 6: PATCH /api/user/profile -->
+  <line x1="0" y1="444" x2="880" y2="444" stroke="#1c1c1c" stroke-width="1"/>
+  <text x="20" y="431" font-family="'JetBrains Mono',monospace" font-size="10.5" fill="#fb923c" font-weight="500">PATCH</text>
+  <text x="84" y="431" font-family="'JetBrains Mono',monospace" font-size="10.5" fill="#a0a0a0">/api/user/profile</text>
+  <text x="857" y="431" font-family="'JetBrains Mono',monospace" font-size="9" fill="#555555" text-anchor="end">14:22:39</text>
+
+  <!-- Fade out -->
+  <rect x="0" y="424" width="880" height="102" fill="url(#fadeOut)"/>
+
+  <!-- Bottom hint bar -->
+  <rect x="0" y="526" width="880" height="14" fill="#080808"/>
+  <text x="440" y="537" font-family="'Space Grotesk',system-ui,sans-serif" font-size="7.5" fill="#2e2e2e" text-anchor="middle" letter-spacing="0.8">Press Ctrl+C to stop  ·  localhost:4040  ·  KShare by KODELYTH</text>
+
+  </g>
 </svg>
