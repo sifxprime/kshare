@@ -18,8 +18,10 @@ function formatDuration(ms: number) {
   if (ms <= 0) return 'expired';
   const h = Math.floor(ms / 3600000);
   const m = Math.floor((ms % 3600000) / 60000);
+  const s = Math.floor((ms % 60000) / 1000);
   if (h > 0) return `${h}h ${m}m`;
-  return `${m}m`;
+  if (m > 0) return `${m}m ${s}s`;
+  return `${s}s`;
 }
 
 function formatDate(ts: number) {
@@ -30,12 +32,14 @@ function formatDate(ts: number) {
 }
 
 export default function TunnelPage() {
-  const params                = useParams();
-  const subdomain             = params.subdomain as string;
-  const [status, setStatus]   = useState<TunnelStatus | null>(null);
-  const [error, setError]     = useState('');
-  const [loading, setLoading] = useState(true);
-  const [copied, setCopied]   = useState(false);
+  const params                    = useParams();
+  const subdomain                 = params.subdomain as string;
+  const [status, setStatus]       = useState<TunnelStatus | null>(null);
+  const [error, setError]         = useState('');
+  const [loading, setLoading]     = useState(true);
+  const [copied, setCopied]       = useState(false);
+  const [nextRefresh, setNextRefresh] = useState(5);
+  const [now, setNow]             = useState(Date.now());
 
   const API = process.env.NEXT_PUBLIC_API_ORIGIN || 'https://api.kodelyth.net';
 
@@ -54,14 +58,25 @@ export default function TunnelPage() {
       setError('Cannot reach server');
     } finally {
       setLoading(false);
+      setNextRefresh(5);
     }
   }, [subdomain, API]);
 
+  // Fetch on mount and every 5 s
   useEffect(() => {
     fetchStatus();
     const id = setInterval(fetchStatus, 5000);
     return () => clearInterval(id);
   }, [fetchStatus]);
+
+  // Live clock — updates remaining time and countdown
+  useEffect(() => {
+    const id = setInterval(() => {
+      setNow(Date.now());
+      setNextRefresh(n => Math.max(0, n - 1));
+    }, 1000);
+    return () => clearInterval(id);
+  }, []);
 
   function copyUrl() {
     if (!status) return;
@@ -70,7 +85,7 @@ export default function TunnelPage() {
     setTimeout(() => setCopied(false), 2000);
   }
 
-  const remaining = status ? status.expiresAt - Date.now() : 0;
+  const remaining = status ? status.expiresAt - now : 0;
   const pct       = status
     ? Math.max(0, Math.min(100, (remaining / (24 * 3600 * 1000)) * 100))
     : 0;
@@ -86,6 +101,11 @@ export default function TunnelPage() {
           <span className={styles.navSep}>/</span>
           <span className={styles.navProduct}>KShare</span>
         </a>
+        {!loading && status && (
+          <button className={styles.refreshBtn} onClick={fetchStatus} title="Refresh now">
+            Refresh {nextRefresh > 0 ? `(${nextRefresh}s)` : ''}
+          </button>
+        )}
       </nav>
 
       <main className={styles.main}>
@@ -94,27 +114,48 @@ export default function TunnelPage() {
         <div className={styles.titleRow}>
           <div className={styles.subdomainBlock}>
             <span className={styles.subdomainLabel}>Tunnel</span>
-            <h1 className={styles.subdomain}>{subdomain}<span className={styles.subdomainSuffix}>.kodelyth.net</span></h1>
+            <h1 className={styles.subdomain}>
+              {subdomain}<span className={styles.subdomainSuffix}>.kodelyth.net</span>
+            </h1>
           </div>
           {!loading && (
             <div className={status?.active ? styles.statusActive : styles.statusInactive}>
               {status?.active
                 ? <><span className={styles.pulse} />connected</>
-                : 'offline'}
+                : error ? 'not found' : 'offline'}
             </div>
           )}
         </div>
 
-        {loading && <p className={styles.hint}>Checking tunnel status...</p>}
+        {/* Loading skeleton */}
+        {loading && (
+          <div className={styles.skeleton}>
+            <div className={styles.skelUrl} />
+            <div className={styles.skelBar} />
+            <div className={styles.skelGrid}>
+              <div className={styles.skelCard} />
+              <div className={styles.skelCard} />
+              <div className={styles.skelCard} />
+            </div>
+          </div>
+        )}
 
+        {/* Error state */}
         {!loading && error && (
           <div className={styles.errorCard}>
             <p className={styles.errorTitle}>Tunnel not found</p>
-            <p className={styles.errorCopy}>{error}. This tunnel may have expired or never existed.</p>
+            <p className={styles.errorCopy}>
+              {error}. This tunnel may have expired or never existed.
+            </p>
+            <div className={styles.errorHint}>
+              <span className={styles.errorHintLabel}>Start a new tunnel:</span>
+              <code className={styles.errorHintCode}>npx @sifxprime/kshare --port 3000</code>
+            </div>
             <a href="/" className={styles.errorBack}>← Back to KShare</a>
           </div>
         )}
 
+        {/* Active tunnel */}
         {!loading && status && (
           <>
             {/* URL card */}
@@ -122,17 +163,35 @@ export default function TunnelPage() {
               <a href={status.url} target="_blank" rel="noreferrer" className={styles.urlText}>
                 {status.url}
               </a>
-              <button className={styles.copyBtn} onClick={copyUrl}>
-                {copied ? 'Copied' : 'Copy URL'}
-              </button>
+              <div className={styles.urlActions}>
+                <button className={styles.copyBtn} onClick={copyUrl}>
+                  {copied ? '✓ Copied' : 'Copy URL'}
+                </button>
+                <a
+                  href={status.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.openBtn}
+                >
+                  Open →
+                </a>
+              </div>
             </div>
 
             {/* Expiry bar */}
             <div className={styles.expiryWrap}>
               <div className={styles.expiryBar}>
-                <div className={styles.expiryFill} style={{ width: `${pct}%` }} />
+                <div
+                  className={styles.expiryFill}
+                  style={{
+                    width: `${pct}%`,
+                    background: pct < 10 ? '#f87171' : pct < 25 ? '#fbbf24' : undefined,
+                  }}
+                />
               </div>
-              <span className={styles.expiryLabel}>{formatDuration(remaining)} remaining</span>
+              <span className={styles.expiryLabel}>
+                {remaining > 0 ? formatDuration(remaining) : 'expired'} remaining
+              </span>
             </div>
 
             {/* Stats grid */}
@@ -143,7 +202,7 @@ export default function TunnelPage() {
               </div>
               <div className={styles.statCard}>
                 <div className={styles.statVal}>{formatDate(status.createdAt)}</div>
-                <div className={styles.statLabel}>Tunnel created</div>
+                <div className={styles.statLabel}>Created</div>
               </div>
               <div className={styles.statCard}>
                 <div className={styles.statVal}>{formatDate(status.expiresAt)}</div>
@@ -154,9 +213,39 @@ export default function TunnelPage() {
             {/* Offline notice */}
             {!status.active && (
               <div className={styles.offlineNote}>
-                The client is currently disconnected. KShare will restore this URL automatically when it reconnects.
+                <strong>Client disconnected.</strong>{' '}
+                KShare will restore this exact URL automatically when the tunnel reconnects — no action needed.
               </div>
             )}
+
+            {/* Share row */}
+            <div className={styles.shareRow}>
+              <span className={styles.shareLabel}>Share this link:</span>
+              <div className={styles.sharePills}>
+                <a
+                  href={`mailto:?subject=Check+out+my+app&body=${encodeURIComponent(status.url)}`}
+                  className={styles.sharePill}
+                >
+                  Email
+                </a>
+                <a
+                  href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(status.url)}&text=${encodeURIComponent('Check out this live demo via KShare by KODELYTH')}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.sharePill}
+                >
+                  X / Twitter
+                </a>
+                <a
+                  href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(status.url)}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className={styles.sharePill}
+                >
+                  LinkedIn
+                </a>
+              </div>
+            </div>
           </>
         )}
       </main>
@@ -166,7 +255,10 @@ export default function TunnelPage() {
           <KodeLythMark size={14} />
           <span>KODELYTH</span>
         </div>
-        <a href="/" className={styles.footerBack}>All of KShare →</a>
+        <div className={styles.footerLinks}>
+          <a href="https://github.com/sifxprime/kshare" target="_blank" rel="noreferrer" className={styles.footerLink}>GitHub</a>
+          <a href="https://kodelyth.net" target="_blank" rel="noreferrer" className={styles.footerLink}>kodelyth.net</a>
+        </div>
       </footer>
     </div>
   );
