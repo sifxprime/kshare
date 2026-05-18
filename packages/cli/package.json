@@ -1,6 +1,6 @@
 {
   "name": "@sifxprime/kshare",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Turn any localhost port into a public HTTPS link — KShare by KODELYTH",
   "author": "KODELYTH <hello@kodelyth.com>",
   "license": "MIT",

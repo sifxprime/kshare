@@ -190,7 +190,7 @@ async function startTunnel({ port, password, showQR }) {
         const response = await forwardToLocal(port, msg, publicUrl);
         const elapsed  = Date.now() - t0;
         display.printRequest(msg.method, msg.path, response.status, elapsed);
-        if (dashboard) dashboard.logRequest(msg.method, msg.path, response.status);
+        if (dashboard) dashboard.logRequest(msg.method, msg.path, response.status, elapsed);
         ws.send(JSON.stringify({ type: 'response', id: msg.id, ...response }));
         return;
       }
