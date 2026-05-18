@@ -1,0 +1,182 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#070707"/>
+      <stop offset="100%" style="stop-color:#0c0c0c"/>
+    </linearGradient>
+    <radialGradient id="glowL" cx="20%" cy="55%" r="45%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:0.04"/>
+      <stop offset="100%" style="stop-color:#22c55e;stop-opacity:0"/>
+    </radialGradient>
+    <radialGradient id="glowR" cx="80%" cy="50%" r="40%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:0.055"/>
+      <stop offset="100%" style="stop-color:#22c55e;stop-opacity:0"/>
+    </radialGradient>
+    <filter id="tshadow">
+      <feDropShadow dx="0" dy="6" stdDeviation="20" flood-color="#000000" flood-opacity="0.7"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glowL)"/>
+  <rect width="1200" height="630" fill="url(#glowR)"/>
+
+  <!-- Subtle grid -->
+  <g stroke="#ffffff" stroke-opacity="0.016" stroke-width="1">
+    <line x1="0" y1="210" x2="1200" y2="210"/>
+    <line x1="0" y1="420" x2="1200" y2="420"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+  </g>
+
+  <!-- Center divider -->
+  <line x1="594" y1="52" x2="594" y2="578" stroke="#22c55e" stroke-width="1" stroke-opacity="0.12"/>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="618" width="1200" height="12" fill="#070707"/>
+  <rect x="0" y="617" width="1200" height="2" fill="#22c55e" opacity="0.2"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--             LEFT PANEL                  -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <!-- Logo nav -->
+  <svg x="44" y="50" width="22" height="22" viewBox="0 0 400 400">
+    <polyline points="128,104 184,200 128,296" stroke="#ffffff" stroke-width="10" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <polyline points="172,100 260,200 172,300" stroke="#ffffff" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </svg>
+  <text x="74" y="65" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#ffffff" font-weight="700" letter-spacing="0.15em">KODELYTH</text>
+  <text x="148" y="65" font-family="system-ui,-apple-system,sans-serif" font-size="12" fill="#2d2d2d">/</text>
+  <text x="160" y="65" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#4b5563" font-weight="600" letter-spacing="0.05em">KShare</text>
+
+  <!-- Badge -->
+  <rect x="44" y="96" width="288" height="26" rx="13" fill="#0d190d" stroke="#22c55e" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="188" y="114" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#4ade80" text-anchor="middle" letter-spacing="0.04em">Open source  ·  Free  ·  Self-hostable</text>
+
+  <!-- Headline -->
+  <text x="44" y="204" font-family="system-ui,-apple-system,sans-serif" font-size="56" fill="#f1f5f9" font-weight="800" letter-spacing="-0.03em">Share localhost.</text>
+  <text x="44" y="268" font-family="system-ui,-apple-system,sans-serif" font-size="56" fill="#a3e635" font-weight="800" letter-spacing="-0.03em">Instantly.</text>
+
+  <!-- Sub copy -->
+  <text x="44" y="314" font-family="system-ui,-apple-system,sans-serif" font-size="16.5" fill="#475569">One command. A public HTTPS link in seconds.</text>
+  <text x="44" y="338" font-family="system-ui,-apple-system,sans-serif" font-size="16.5" fill="#475569">No signup, no config, no cloud account.</text>
+
+  <!-- Command pill -->
+  <rect x="44" y="362" width="524" height="52" rx="9" fill="#0b180b" stroke="#22c55e" stroke-width="1.5" stroke-opacity="0.45"/>
+  <text x="68" y="394" font-family="'Courier New',Courier,monospace" font-size="17" fill="#374151">$</text>
+  <text x="86" y="394" font-family="'Courier New',Courier,monospace" font-size="17" fill="#6b7280">npx</text>
+  <text x="120" y="394" font-family="'Courier New',Courier,monospace" font-size="17" fill="#d1d5db">@sifxprime/kshare</text>
+  <text x="378" y="394" font-family="'Courier New',Courier,monospace" font-size="17" fill="#a3e635">--port 3000</text>
+
+  <!-- Feature bullets -->
+  <circle cx="56" cy="440" r="3" fill="#a3e635"/>
+  <text x="72" y="445" font-family="system-ui,-apple-system,sans-serif" font-size="14.5" fill="#6b7280">Works with React, Next.js, Django, Laravel, Rails — any app</text>
+
+  <circle cx="56" cy="470" r="3" fill="#a3e635"/>
+  <text x="72" y="475" font-family="system-ui,-apple-system,sans-serif" font-size="14.5" fill="#6b7280">HTTPS by default  ·  Auto-reconnects  ·  Same URL every run</text>
+
+  <circle cx="56" cy="500" r="3" fill="#a3e635"/>
+  <text x="72" y="505" font-family="system-ui,-apple-system,sans-serif" font-size="14.5" fill="#6b7280">Password protect  ·  Request log  ·  Self-host on your own VPS</text>
+
+  <!-- GitHub link -->
+  <text x="44" y="568" font-family="'Courier New',Courier,monospace" font-size="12.5" fill="#1f2937">github.com/sifxprime/kshare</text>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--             RIGHT PANEL — TERMINAL      -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <!-- Terminal outer shadow layer -->
+  <rect x="617" y="50" width="540" height="530" rx="12" fill="#000000" opacity="0.5"/>
+
+  <!-- Terminal window -->
+  <rect x="614" y="47" width="540" height="530" rx="12" fill="#0e0e0e" stroke="#1c1c1c" stroke-width="1.5"/>
+
+  <!-- Title bar -->
+  <rect x="614" y="47" width="540" height="42" rx="12" fill="#141414"/>
+  <rect x="614" y="67" width="540" height="22" fill="#141414"/>
+
+  <!-- Traffic lights -->
+  <circle cx="640" cy="68" r="6" fill="#f87171" opacity="0.9"/>
+  <circle cx="660" cy="68" r="6" fill="#fbbf24" opacity="0.9"/>
+  <circle cx="680" cy="68" r="6" fill="#a3e635" opacity="0.9"/>
+
+  <!-- Terminal title -->
+  <text x="884" y="73" font-family="system-ui,-apple-system,sans-serif" font-size="11.5" fill="#374151" text-anchor="middle" letter-spacing="0.05em">terminal</text>
+
+  <!-- Body separator -->
+  <line x1="614" y1="89" x2="1154" y2="89" stroke="#1c1c1c" stroke-width="1"/>
+
+  <!-- Prompt -->
+  <text x="638" y="118" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#22c55e">$</text>
+  <text x="654" y="118" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#4b5563">npx @sifxprime/kshare --port 3000</text>
+
+  <!-- Brand bar -->
+  <rect x="630" y="132" width="506" height="36" rx="5" fill="#0b1a0b"/>
+  <text x="650" y="156" font-family="'Courier New',Courier,monospace" font-size="15" fill="#ffffff" font-weight="bold">  KShare</text>
+  <text x="746" y="156" font-family="'Courier New',Courier,monospace" font-size="12.5" fill="#4ade80">  by KODELYTH</text>
+
+  <!-- Connected -->
+  <text x="638" y="192" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#4ade80">  Connected</text>
+
+  <!-- Separator -->
+  <line x1="638" y1="208" x2="1134" y2="208" stroke="#1a1a1a" stroke-width="1"/>
+
+  <!-- Info rows -->
+  <text x="650" y="232" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#2d3748">  Public URL  </text>
+  <text x="800" y="232" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#60a5fa">https://ab12x.kodelyth.net</text>
+
+  <text x="650" y="254" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#2d3748">  Dashboard   </text>
+  <text x="800" y="254" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#60a5fa">http://localhost:4040</text>
+
+  <text x="650" y="276" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#2d3748">  Expires     </text>
+  <text x="800" y="276" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#374151">23h 59m</text>
+
+  <text x="650" y="298" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#2d3748">  Local       </text>
+  <text x="800" y="298" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#374151">localhost:3000</text>
+
+  <!-- Separator -->
+  <line x1="638" y1="316" x2="1134" y2="316" stroke="#1a1a1a" stroke-width="1"/>
+
+  <!-- Requests header -->
+  <text x="650" y="340" font-family="'Courier New',Courier,monospace" font-size="11.5" fill="#1c2c1c">  METHOD   PATH                  STATUS   TIME</text>
+
+  <!-- Request rows -->
+  <text x="650" y="364" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#4ade80">  GET</text>
+  <text x="706" y="364" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#6b7280">   /                     </text>
+  <text x="964" y="364" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#4ade80">200</text>
+  <text x="1004" y="364" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#374151">   12ms</text>
+
+  <text x="650" y="386" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#4ade80">  GET</text>
+  <text x="706" y="386" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#6b7280">   /api/me               </text>
+  <text x="964" y="386" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#4ade80">200</text>
+  <text x="1004" y="386" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#374151">   8ms</text>
+
+  <text x="650" y="408" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#60a5fa">  POST</text>
+  <text x="706" y="408" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#6b7280">  /api/login             </text>
+  <text x="964" y="408" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#4ade80">201</text>
+  <text x="1004" y="408" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#374151">   34ms</text>
+
+  <text x="650" y="430" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#4ade80">  GET</text>
+  <text x="706" y="430" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#6b7280">   /static/app.js        </text>
+  <text x="964" y="430" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#4ade80">200</text>
+  <text x="1004" y="430" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#374151">   5ms</text>
+
+  <text x="650" y="452" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#f87171">  DELETE</text>
+  <text x="706" y="452" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#6b7280"> /api/session          </text>
+  <text x="964" y="452" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#4ade80">200</text>
+  <text x="1004" y="452" font-family="'Courier New',Courier,monospace" font-size="13.5" fill="#374151">   19ms</text>
+
+  <!-- Separator -->
+  <line x1="638" y1="468" x2="1134" y2="468" stroke="#1a1a1a" stroke-width="1"/>
+
+  <!-- Dim hint -->
+  <text x="650" y="494" font-family="'Courier New',Courier,monospace" font-size="13" fill="#1f2937">  Press Ctrl+C to stop</text>
+
+  <!-- Cursor -->
+  <rect x="638" y="508" width="8" height="15" rx="1" fill="#4ade80" opacity="0.6"/>
+
+  <!-- Powered by tag bottom right -->
+  <text x="1148" y="620" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#1a1a1a" text-anchor="end" letter-spacing="0.08em">KODELYTH</text>
+</svg>

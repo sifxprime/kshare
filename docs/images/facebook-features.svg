@@ -1,0 +1,169 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#070707"/>
+      <stop offset="100%" style="stop-color:#0b0b0b"/>
+    </linearGradient>
+    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:0.04"/>
+      <stop offset="100%" style="stop-color:#22c55e;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+
+  <!-- Subtle grid -->
+  <g stroke="#ffffff" stroke-opacity="0.015" stroke-width="1">
+    <line x1="0" y1="315" x2="1200" y2="315"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+  </g>
+
+  <!-- Bottom accent -->
+  <rect x="0" y="617" width="1200" height="2" fill="#22c55e" opacity="0.18"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--                HEADER                   -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <!-- Logo mark top center -->
+  <svg x="562" y="18" width="20" height="20" viewBox="0 0 400 400">
+    <polyline points="128,104 184,200 128,296" stroke="#ffffff" stroke-width="10" stroke-opacity="0.15" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <polyline points="172,100 260,200 172,300" stroke="#ffffff" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </svg>
+  <text x="590" y="33" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#374151" letter-spacing="0.14em">KODELYTH  /  KShare</text>
+
+  <!-- Title -->
+  <text x="600" y="76" font-family="system-ui,-apple-system,sans-serif" font-size="30" fill="#f1f5f9" font-weight="800" text-anchor="middle" letter-spacing="-0.02em">Why developers love KShare</text>
+
+  <!-- Underline accent -->
+  <line x1="480" y1="90" x2="720" y2="90" stroke="#22c55e" stroke-width="1.5" stroke-opacity="0.4"/>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--           FEATURE GRID  2 × 3           -->
+  <!--  Row 1: y=112–302  Row 2: y=318–508     -->
+  <!--  Col gaps: x=24, 416, 808               -->
+  <!--  Card w=376, card h=190                 -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <!-- ── CARD 01 ── Any app, any port ───────── -->
+  <rect x="24" y="112" width="376" height="190" rx="10" fill="#0d0d0d" stroke="#1a1a1a" stroke-width="1.5"/>
+  <rect x="24" y="112" width="4" height="190" rx="2" fill="#a3e635" opacity="0.7"/>
+  <text x="48" y="152" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#a3e635" font-weight="700" letter-spacing="0.12em">01</text>
+  <text x="76" y="152" font-family="system-ui,-apple-system,sans-serif" font-size="17" fill="#f1f5f9" font-weight="700">Any app, any port</text>
+  <text x="48" y="180" font-family="system-ui,-apple-system,sans-serif" font-size="13.5" fill="#6b7280">React, Vite, Next.js, Django, Laravel,</text>
+  <text x="48" y="200" font-family="system-ui,-apple-system,sans-serif" font-size="13.5" fill="#6b7280">Express, Rails, FastAPI — zero changes.</text>
+  <!-- Code snippet -->
+  <rect x="48" y="218" width="336" height="30" rx="5" fill="#0a0a0a" stroke="#1e1e1e" stroke-width="1"/>
+  <text x="64" y="238" font-family="'Courier New',Courier,monospace" font-size="12" fill="#4b5563">$ kshare</text>
+  <text x="116" y="238" font-family="'Courier New',Courier,monospace" font-size="12" fill="#a3e635">--port 3000</text>
+  <text x="240" y="238" font-family="'Courier New',Courier,monospace" font-size="12" fill="#374151">  # any port</text>
+  <!-- Tags -->
+  <rect x="48" y="258" width="68" height="22" rx="11" fill="#0f1f0f" stroke="#22c55e" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="82" y="273" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#4ade80" text-anchor="middle">universal</text>
+  <rect x="124" y="258" width="80" height="22" rx="11" fill="#0f1f0f" stroke="#22c55e" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="164" y="273" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#4ade80" text-anchor="middle">zero config</text>
+
+  <!-- ── CARD 02 ── Stays connected ──────────── -->
+  <rect x="412" y="112" width="376" height="190" rx="10" fill="#0d0d0d" stroke="#1a1a1a" stroke-width="1.5"/>
+  <rect x="412" y="112" width="4" height="190" rx="2" fill="#a3e635" opacity="0.7"/>
+  <text x="436" y="152" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#a3e635" font-weight="700" letter-spacing="0.12em">02</text>
+  <text x="464" y="152" font-family="system-ui,-apple-system,sans-serif" font-size="17" fill="#f1f5f9" font-weight="700">Stays connected</text>
+  <text x="436" y="180" font-family="system-ui,-apple-system,sans-serif" font-size="13.5" fill="#6b7280">Wi-Fi drops? KShare reconnects and</text>
+  <text x="436" y="200" font-family="system-ui,-apple-system,sans-serif" font-size="13.5" fill="#6b7280">restores the exact same public URL.</text>
+  <!-- Reconnect indicator -->
+  <rect x="436" y="218" width="336" height="30" rx="5" fill="#0a0a0a" stroke="#1e1e1e" stroke-width="1"/>
+  <circle cx="454" cy="233" r="5" fill="#4ade80" opacity="0.8"/>
+  <text x="468" y="238" font-family="'Courier New',Courier,monospace" font-size="12" fill="#4ade80">Reconnected</text>
+  <text x="564" y="238" font-family="'Courier New',Courier,monospace" font-size="12" fill="#374151"> — same URL restored</text>
+  <!-- Tags -->
+  <rect x="436" y="258" width="78" height="22" rx="11" fill="#0f1f0f" stroke="#22c55e" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="475" y="273" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#4ade80" text-anchor="middle">auto-retry</text>
+  <rect x="522" y="258" width="80" height="22" rx="11" fill="#0f1f0f" stroke="#22c55e" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="562" y="273" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#4ade80" text-anchor="middle">stable URL</text>
+
+  <!-- ── CARD 03 ── HTTPS by default ─────────── -->
+  <rect x="800" y="112" width="376" height="190" rx="10" fill="#0d0d0d" stroke="#1a1a1a" stroke-width="1.5"/>
+  <rect x="800" y="112" width="4" height="190" rx="2" fill="#a3e635" opacity="0.7"/>
+  <text x="824" y="152" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#a3e635" font-weight="700" letter-spacing="0.12em">03</text>
+  <text x="852" y="152" font-family="system-ui,-apple-system,sans-serif" font-size="17" fill="#f1f5f9" font-weight="700">HTTPS by default</text>
+  <text x="824" y="180" font-family="system-ui,-apple-system,sans-serif" font-size="13.5" fill="#6b7280">Every URL is HTTPS. Cookies, auth flows,</text>
+  <text x="824" y="200" font-family="system-ui,-apple-system,sans-serif" font-size="13.5" fill="#6b7280">OAuth redirects all work correctly.</text>
+  <!-- URL pill -->
+  <rect x="824" y="218" width="336" height="30" rx="5" fill="#0a0a0a" stroke="#1e1e1e" stroke-width="1"/>
+  <text x="840" y="238" font-family="'Courier New',Courier,monospace" font-size="12" fill="#60a5fa">https://</text>
+  <text x="898" y="238" font-family="'Courier New',Courier,monospace" font-size="12" fill="#94a3b8">ab12x.kodelyth.net</text>
+  <!-- Tags -->
+  <rect x="824" y="258" width="58" height="22" rx="11" fill="#0f1a2f" stroke="#60a5fa" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="853" y="273" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#60a5fa" text-anchor="middle">TLS</text>
+  <rect x="890" y="258" width="82" height="22" rx="11" fill="#0f1a2f" stroke="#60a5fa" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="931" y="273" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#60a5fa" text-anchor="middle">no setup</text>
+
+  <!-- ── CARD 04 ── Local request log ─────────── -->
+  <rect x="24" y="318" width="376" height="190" rx="10" fill="#0d0d0d" stroke="#1a1a1a" stroke-width="1.5"/>
+  <rect x="24" y="318" width="4" height="190" rx="2" fill="#a3e635" opacity="0.7"/>
+  <text x="48" y="358" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#a3e635" font-weight="700" letter-spacing="0.12em">04</text>
+  <text x="76" y="358" font-family="system-ui,-apple-system,sans-serif" font-size="17" fill="#f1f5f9" font-weight="700">Local request log</text>
+  <text x="48" y="386" font-family="system-ui,-apple-system,sans-serif" font-size="13.5" fill="#6b7280">Open localhost:4040 while tunnelling to</text>
+  <text x="48" y="406" font-family="system-ui,-apple-system,sans-serif" font-size="13.5" fill="#6b7280">see every request live. No extension.</text>
+  <!-- Mini log -->
+  <rect x="48" y="424" width="336" height="58" rx="5" fill="#0a0a0a" stroke="#1e1e1e" stroke-width="1"/>
+  <text x="64" y="443" font-family="'Courier New',Courier,monospace" font-size="11.5" fill="#4ade80">GET</text>
+  <text x="97" y="443" font-family="'Courier New',Courier,monospace" font-size="11.5" fill="#6b7280"> /api/me      </text>
+  <text x="252" y="443" font-family="'Courier New',Courier,monospace" font-size="11.5" fill="#4ade80">200</text>
+  <text x="283" y="443" font-family="'Courier New',Courier,monospace" font-size="11.5" fill="#374151"> 8ms</text>
+  <text x="64" y="462" font-family="'Courier New',Courier,monospace" font-size="11.5" fill="#60a5fa">POST</text>
+  <text x="97" y="462" font-family="'Courier New',Courier,monospace" font-size="11.5" fill="#6b7280"> /api/login   </text>
+  <text x="252" y="462" font-family="'Courier New',Courier,monospace" font-size="11.5" fill="#4ade80">201</text>
+  <text x="283" y="462" font-family="'Courier New',Courier,monospace" font-size="11.5" fill="#374151"> 34ms</text>
+
+  <!-- ── CARD 05 ── Password protect ──────────── -->
+  <rect x="412" y="318" width="376" height="190" rx="10" fill="#0d0d0d" stroke="#1a1a1a" stroke-width="1.5"/>
+  <rect x="412" y="318" width="4" height="190" rx="2" fill="#a3e635" opacity="0.7"/>
+  <text x="436" y="358" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#a3e635" font-weight="700" letter-spacing="0.12em">05</text>
+  <text x="464" y="358" font-family="system-ui,-apple-system,sans-serif" font-size="17" fill="#f1f5f9" font-weight="700">Password protect</text>
+  <text x="436" y="386" font-family="system-ui,-apple-system,sans-serif" font-size="13.5" fill="#6b7280">Restrict access with one flag. Share the</text>
+  <text x="436" y="406" font-family="system-ui,-apple-system,sans-serif" font-size="13.5" fill="#6b7280">link and password separately.</text>
+  <rect x="436" y="424" width="336" height="30" rx="5" fill="#0a0a0a" stroke="#1e1e1e" stroke-width="1"/>
+  <text x="452" y="444" font-family="'Courier New',Courier,monospace" font-size="12" fill="#94a3b8">kshare --port 3000</text>
+  <text x="612" y="444" font-family="'Courier New',Courier,monospace" font-size="12" fill="#a3e635">--password</text>
+  <text x="704" y="444" font-family="'Courier New',Courier,monospace" font-size="12" fill="#fbbf24"> secret</text>
+  <!-- Tags -->
+  <rect x="436" y="464" width="70" height="22" rx="11" fill="#1a1208" stroke="#fbbf24" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="471" y="479" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#fbbf24" text-anchor="middle">secure</text>
+  <rect x="514" y="464" width="90" height="22" rx="11" fill="#1a1208" stroke="#fbbf24" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="559" y="479" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#fbbf24" text-anchor="middle">one flag</text>
+
+  <!-- ── CARD 06 ── Self-hostable ──────────────── -->
+  <rect x="800" y="318" width="376" height="190" rx="10" fill="#0d0d0d" stroke="#1a1a1a" stroke-width="1.5"/>
+  <rect x="800" y="318" width="4" height="190" rx="2" fill="#a3e635" opacity="0.7"/>
+  <text x="824" y="358" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#a3e635" font-weight="700" letter-spacing="0.12em">06</text>
+  <text x="852" y="358" font-family="system-ui,-apple-system,sans-serif" font-size="17" fill="#f1f5f9" font-weight="700">Self-hostable</text>
+  <text x="824" y="386" font-family="system-ui,-apple-system,sans-serif" font-size="13.5" fill="#6b7280">Run your own tunnel server on any VPS.</text>
+  <text x="824" y="406" font-family="system-ui,-apple-system,sans-serif" font-size="13.5" fill="#6b7280">One config file. Your domain. Your data.</text>
+  <rect x="824" y="424" width="336" height="30" rx="5" fill="#0a0a0a" stroke="#1e1e1e" stroke-width="1"/>
+  <text x="840" y="444" font-family="'Courier New',Courier,monospace" font-size="12" fill="#4b5563">$ </text>
+  <text x="854" y="444" font-family="'Courier New',Courier,monospace" font-size="12" fill="#94a3b8">git clone</text>
+  <text x="922" y="444" font-family="'Courier New',Courier,monospace" font-size="12" fill="#a3e635"> kshare</text>
+  <text x="978" y="444" font-family="'Courier New',Courier,monospace" font-size="12" fill="#374151"> &amp;&amp; pnpm start</text>
+  <!-- Tags -->
+  <rect x="824" y="464" width="86" height="22" rx="11" fill="#0f1f0f" stroke="#22c55e" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="867" y="479" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#4ade80" text-anchor="middle">open source</text>
+  <rect x="918" y="464" width="96" height="22" rx="11" fill="#0f1f0f" stroke="#22c55e" stroke-width="1" stroke-opacity="0.3"/>
+  <text x="966" y="479" font-family="system-ui,-apple-system,sans-serif" font-size="10.5" fill="#4ade80" text-anchor="middle">$4/mo VPS</text>
+
+  <!-- ═══════════════════════════════════════ -->
+  <!--                FOOTER                   -->
+  <!-- ═══════════════════════════════════════ -->
+
+  <!-- Footer content -->
+  <text x="600" y="565" font-family="'Courier New',Courier,monospace" font-size="14.5" fill="#374151" text-anchor="middle">npx @sifxprime/kshare --port 3000</text>
+
+  <!-- Left label -->
+  <text x="44" y="565" font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#1f2937" letter-spacing="0.06em">TRY IT FREE</text>
+
+  <!-- Right label -->
+  <text x="1156" y="565" font-family="'Courier New',Courier,monospace" font-size="11" fill="#1f2937" text-anchor="end">github.com/sifxprime/kshare</text>
+</svg>
